@@ -1,0 +1,23 @@
+{
+    "name": "research",
+    "private": true,
+    "workspaces": [
+        "app1",
+        "host"
+    ],
+    "scripts": {
+        "start:host": "yarn workspace host run start",
+        "start:app1": "yarn workspace app1 run start",
+        "run:host:ios": "yarn workspace host run ios",
+        "run:host:android": "yarn workspace host run android",
+        "bootstrap:pods": "yarn workspaces foreach run pod_install",
+        "bootstrap": "yarn && yarn bootstrap:pods",
+        "clean": "find ./ -type d -name 'node_modules' -exec rm -rf '{}' +",
+        "start": "concurrently -P 'yarn:start:*(!standalone) {1}'"
+    },
+    "devDependencies": {
+        "@types/react-native": "^0.71.5",
+        "concurrently": "^7.2.2"
+    },
+    "packageManager": "yarn@3.2.1"
+}
