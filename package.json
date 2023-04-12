@@ -15,9 +15,5 @@
         "clean": "find ./ -type d -name 'node_modules' -exec rm -rf '{}' +",
         "start": "concurrently -P 'yarn:start:*(!standalone) {1}'"
     },
-    "devDependencies": {
-        "@types/react-native": "^0.71.5",
-        "concurrently": "^7.2.2"
-    },
     "packageManager": "yarn@3.2.1"
 }
