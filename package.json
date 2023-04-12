@@ -15,5 +15,8 @@
         "clean": "find ./ -type d -name 'node_modules' -exec rm -rf '{}' +",
         "start": "concurrently -P 'yarn:start:*(!standalone) {1}'"
     },
-    "packageManager": "yarn@3.2.1"
+    "packageManager": "yarn@3.2.1",
+    "dependencies": {
+        "concurrently": "^8.0.1"
+    }
 }
