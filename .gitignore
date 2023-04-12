@@ -1,4 +1,4 @@
 node_modules
 server/public/bundle/*
 
-.yarn
+.yarn/cache
